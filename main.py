@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import math
+import Brent
+import dichotomy
+import function
+import GoldenRation
+import Fibonacci
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import array
+import numpy
+import matplotlib.pyplot as plt
+import scipy as scipy
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+epsilon = 0.1
+a = 6
+b = 10
+print('Дихтомия')
+dichotomy.dichotomy(epsilon, a, b)
+print('Золотое сечение')
+GoldenRation.goldenRatio(epsilon, a, b)
+print('Фибоначи')
+Fibonacci.Fibonacci(epsilon, a, b)
+print('метод Парабол')
+print(Brent.Brent(epsilon, a, b))
+print('Брент')
+print(Brent.Brent(epsilon, a, b))
