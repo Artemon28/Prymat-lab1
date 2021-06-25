@@ -16,7 +16,8 @@ def Fibonacci(epsilon, a, b):
     fib1 = 2
     fib2 = 1
     fib3 = 1
-    while ((b - a) / epsilon) > fib1:
+    prev = b - a
+    while ((b - a) / epsilon) >= fib1:
         fib3 = fib2
         temp_fib = fib1
         fib1 = fib2 + fib1
@@ -44,10 +45,13 @@ def Fibonacci(epsilon, a, b):
             tmp1 = a + fib3 / fib1 * (b - a)
             ytmp1 = function.func(tmp1)
             countFunc += 1
-        fib3 = fib2
-        tmp_fib = fib1
-        fib1 = fib2 + fib1
-        fib2 = tmp_fib
+        print((b-a)/prev)
+        prev = b - a
+        temp_fib = fib3
+        fib3 = fib2 - fib3
+        fib1 = fib2
+        fib2 = temp_fib
+        # print(fib3, fib2, fib1)
     tmp2 = tmp1 + epsilon
     ytmp2 = function.func(tmp2)
     countFunc += 1
